@@ -1,6 +1,6 @@
 private double fractionLength = 1.4; 
-private int smallestBranch = 3; 
-private double branchAngle = 0.50;  
+private int smallestBranch = 10; 
+private double branchAngle = 0.5;  
 public void setup() 
 {   
 	size(640,480);    
@@ -16,17 +16,17 @@ public void draw()
 public void drawBranches(int x,int y, double branchLength, double angle) 
 {   
 	//your code here    
-	//double angle1, angle2;
-	//int endX1, endY1, endX2, endY2;
-	double angle1 = angle + branchAngle;
-	double angle2 = angle - branchAngle;
+	double angle1, angle2;
+	int endX1, endY1, endX2, endY2;
+	angle1 = angle + branchAngle;
+	angle2 = angle - branchAngle;
 	branchLength = branchLength*fractionLength;
 
-	int endX1 = (int)(branchLength*Math.cos(angle1) + x);
-	int endY1 = (int)(branchLength*Math.sin(angle1) + y);
+	endX1 = (int)((branchLength*Math.cos(angle1) + x));
+	endY1 = (int)((branchLength*Math.sin(angle1) + y));
 
-	int endX2 = (int)(branchLength*Math.cos(angle2) + x);
-	int endY2 = (int)(branchLength*Math.sin(angle2) + y);
+	endX2 = (int)((branchLength*Math.cos(angle2) + x));
+	endY2 = (int)((branchLength*Math.sin(angle2) + y));
 
 	stroke((int)(Math.random()*255)+30, (int)(Math.random()*255)+100, (int)(Math.random()*255)+50);
 	line(x, y, endX1, endY1);
@@ -34,8 +34,8 @@ public void drawBranches(int x,int y, double branchLength, double angle)
 
 	if(branchLength > smallestBranch)
 	{
-		drawBranches(endX1,endY1,branchLength/2, 3*Math.PI/2);
-		drawBranches(endX2,endY2,branchLength/2, 3*Math.PI/2);
+		drawBranches(endX1,endY1,branchLength/1.9, 3*Math.PI/2); //right
+		drawBranches(endX2,endY2,branchLength/3, 4*Math.PI/3); //left
 	}
 } 
 
