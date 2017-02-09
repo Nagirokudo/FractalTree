@@ -44,10 +44,10 @@ public void drawBranches(int x,int y, double branchLength, double angle)
 
 	if(branchLength > smallestBranch)
 	{
-		drawBranches(endX1,endY1,branchLength/4, 3*Math.PI/2); //right
-		drawBranches(endX2,endY2,branchLength/4, 3*Math.PI/2); //left
-		drawBranches(endX3,endY3,branchLength/3, 3*Math.PI/2); //right
-		drawBranches(endX4,endY4,branchLength/3, 3*Math.PI/2); //left
+		drawBranches(endX1,endY1,branchLength/3, 3*Math.PI/2); //right
+		drawBranches(endX2,endY2,branchLength/3, 3*Math.PI/2); //left
+		drawBranches(endX3,endY3,branchLength/4, 3*Math.PI/2); //right
+		drawBranches(endX4,endY4,branchLength/4, 3*Math.PI/2); //left
 	}
 } 
 
